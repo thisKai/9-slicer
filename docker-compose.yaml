@@ -1,0 +1,9 @@
+version: '2'
+services:
+  elm:
+    build:
+      context: .
+    ports:
+      - "8080:8000"
+    volumes:
+      - ./app:/code

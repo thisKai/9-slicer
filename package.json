@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-elm": "elm make ./app/Main.elm --output ./app.js",
+    "build-elm-docker": "docker-compose run elm",
     "start": "electron .",
     "dev": "npm run build-elm && npm start"
   },
