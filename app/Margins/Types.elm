@@ -13,6 +13,9 @@ type Msg
     | MarginDragStart Side Position
     | MarginDragMove Side Position
     | MarginDragEnd Side Position
+    | PreviewResizeStart ResizeEdge Position
+    | PreviewResizeMove ResizeEdge Position
+    | PreviewResizeEnd ResizeEdge Position
 
 
 type Source
@@ -46,6 +49,16 @@ type Side
     | Bottom
     | Left
 
+type ResizeEdge
+    = NoEdge
+    | TopLeftCorner
+    | TopEdge
+    | TopRightCorner
+    | RightEdge
+    | BottomRightCorner
+    | BottomEdge
+    | BottomLeftCorner
+    | LeftEdge
 
 type alias DragData =
     { side : Side
