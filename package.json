@@ -15,6 +15,7 @@
     "electron": "^1.4.5"
   },
   "devDependencies": {
+    "chokidar": "^1.6.1",
     "elm": "^0.18.0"
   }
 }
