@@ -1,0 +1,236 @@
+html{
+  overflow: hidden;
+  background-color: #444;
+  color: #CCC;
+  -webkit-user-select: none;
+  user-select: none;
+  font-family: sans-serif;
+}
+body{
+  margin: 0;
+}
+.workspace{
+  display: flex;
+  flex-direction: column;
+  height: 100%
+}
+.toolbar{
+  background-color: #222;
+  display: flex;
+}
+.spacer{
+  flex-grow: 1;
+}
+.split-view{
+  display: flex;
+  flex-grow: 1;
+}
+.split-view > .bigger-bit{
+  position: relative;
+  flex-grow: 1;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.split-view > .bigger-bit.stretch-contents{
+  align-items: stretch;
+  align-content: stretch;
+}
+.stretch-contents .checkerboard{
+  flex-grow: 1;
+}
+.split-view > .sidebar{
+  flex-shrink: 0;
+  flex-basis: 128px;
+  background-color: #333;
+}
+
+.flexgrid-5{
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.margins-input{
+  display: flex;
+}
+.margin-input{
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: 25%;
+}
+.margin-input label,
+.margin-input input{
+  display: block;
+  width: 100%;
+}
+.margin-input label{
+  font-size: 0.8em;
+}
+
+.flexgrid-5 .v-center{
+  display: flex;
+}
+.flexgrid-5 .left,
+.flexgrid-5 .right{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.flexgrid-5 .left{
+  align-items: flex-end;
+}
+.flexgrid-5 .h-center{
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  margin: 2px;
+  border-radius: 3px;
+  font-size: 0;
+  background-image:
+    -webkit-linear-gradient(45deg, #CCC 25%, transparent 25%,transparent 75%, #CCC 75%, #CCC 100%),
+    -webkit-linear-gradient(45deg, #CCC 25%, transparent 25%,transparent 75%, #CCC 75%, #CCC 100%);
+  background-size:16px 16px;
+  background-position:0 0, 8px 8px;
+  box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.1), inset 0px 1px 3px rgba(0, 0, 0, 0.24), 0px 1px #FFF;
+}
+.checkerboard{
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  align-content: stretch;
+  background-color: #FFF;
+  /*background-image:
+    -webkit-linear-gradient(45deg, #EEE 25%, transparent 25%,transparent 75%, #EEE 75%, #EEE 100%),
+    -webkit-linear-gradient(45deg, #EEE 25%, transparent 25%,transparent 75%, #EEE 75%, #EEE 100%);*/
+  background-size:16px 16px;
+  background-position:0 0, 8px 8px;
+}
+
+.margins-preview{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.margins-preview .highlight{
+  background-color:rgba(0,128,128,0.5);
+}
+
+.margins-preview .corner{
+  background-color:rgba(0,128,128,0.25);
+}
+.margins-preview .margin{
+  position: absolute;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: transparent;
+}
+.margins-preview:hover .margin{
+  color: #000;
+}
+.margins-preview .margin-top,
+.margins-preview .margin-bottom{
+  left: 0;
+  right: 0;
+}
+.margins-preview .margin-top{
+  top: 0;
+}
+.margins-preview .margin-bottom{
+  bottom: 0;
+}
+
+.margins-preview .margin-left,
+.margins-preview .margin-right{
+  top: 0;
+  bottom: 0;
+}
+.margins-preview .margin-left{
+  left: 0;
+}
+.margins-preview .margin-right{
+  right: 0;
+}
+.margins-preview .margin-resizer{
+  box-sizing: border-box;
+}
+.margins-preview .margin-resizer:hover{
+  border-color: rgba(0,0,0,0.25);
+}
+.margins-preview .margin-resizer:active{
+  border-color: rgba(0,0,0,0.5);
+}
+.margin-resizer-top{
+  top: 0;
+  border-bottom: 8px solid transparent;
+  cursor: ns-resize;
+}
+.margin-resizer-right{
+  right: 0;
+  border-left: 8px solid transparent;
+  cursor: ew-resize;
+}
+.margin-resizer-bottom{
+  bottom: 0;
+  border-top: 8px solid transparent;
+  cursor: ns-resize;
+}
+.margin-resizer-left{
+  left: 0;
+  border-right: 8px solid transparent;
+  cursor: ew-resize;
+}
+.layer-item{
+}
+.layer-item > header{
+  display: flex;
+  align-items: center;
+}
+.layer-item-icon{
+  width: 32px;
+  height:32px;
+  position: relative;
+}
+.layer-item-icon::after{
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+}
+.frame-image-part-icon::after{
+  border:1px solid #000;
+  background-color: rgba(0,0,0,0.25);
+}
+.shadow-image-part-icon::after{
+  box-shadow: 0px 0px 4px #000;
+}
+.mask-image-part-icon::after{
+  background-color: #000;
+}
+
+.layout-h{
+  display: flex;
+}
+.grow{
+  flex-grow: 1;
+}
+.tab-bar{
+  display: flex;
+}
+.tab{
+  padding: 8px 16px;
+}
