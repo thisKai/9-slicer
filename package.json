@@ -1,0 +1,20 @@
+{
+  "name": "9-slicer",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-elm": "elm make ./app/Main.elm --output ./app.js",
+    "start": "electron .",
+    "dev": "npm run build-elm && npm start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^1.4.5"
+  },
+  "devDependencies": {
+    "elm": "^0.18.0"
+  }
+}
