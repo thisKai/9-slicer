@@ -10,11 +10,11 @@ import String
 
 
 changeMarginSizeMsg dimension text =
-    Types.ImageSlicerMessage (Preview.ChangeSize dimension text)
+    Types.PreviewMessage (Preview.ChangeSize dimension text)
 
 
 changeStretchPreviewMsg stretch =
-    Types.ImageSlicerMessage (Preview.ChangeStretchPreview stretch)
+    Types.PreviewMessage (Preview.ChangeStretchPreview stretch)
 
 
 sizeEditor size stretchPreview =

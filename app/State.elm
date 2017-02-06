@@ -48,5 +48,5 @@ update msg model =
         RequestOpenUrl ->
             ( model, requestOpenUrl () )
 
-        ImageSlicerMessage imageSlicerMsg ->
+        PreviewMessage imageSlicerMsg ->
             Preview.State.update imageSlicerMsg model

@@ -11,12 +11,12 @@ subscriptions : Types.Model -> Sub Types.Msg
 subscriptions model =
     case model.drag of
         Nothing ->
-            receiveUrl (\url -> (Types.ImageSlicerMessage (ChangeImageSource url)))
+            receiveUrl (\url -> (Types.PreviewMessage (ChangeImageSource url)))
 
         Just drag ->
             Sub.batch
-                [ Mouse.moves (\pos -> (Types.ImageSlicerMessage (MarginDragMove drag.side pos)))
-                , Mouse.ups (\pos -> (Types.ImageSlicerMessage (MarginDragEnd drag.side pos)))
+                [ Mouse.moves (\pos -> (Types.PreviewMessage (MarginDragMove drag.side pos)))
+                , Mouse.ups (\pos -> (Types.PreviewMessage (MarginDragEnd drag.side pos)))
                 ]
 
 

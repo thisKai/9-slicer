@@ -13,7 +13,7 @@ import Json.Decode as Decode
 
 mouseMsg : (Position -> Msg) -> Position -> Types.Msg
 mouseMsg msg pos =
-    Types.ImageSlicerMessage (msg pos)
+    Types.PreviewMessage (msg pos)
 
 
 onMarginDragStart side =
@@ -78,7 +78,7 @@ marginsPreview margins =
 
 
 changeMarginsMsg side text =
-    Types.ImageSlicerMessage (ChangeMargins side text)
+    Types.PreviewMessage (ChangeMargins side text)
 
 
 marginInput margin val =
@@ -94,7 +94,7 @@ marginInput margin val =
 
 
 changeMarginPreviewVisibilityMsg visibility =
-    Types.ImageSlicerMessage (ChangeMarginPreviewVisibility visibility)
+    Types.PreviewMessage (ChangeMarginPreviewVisibility visibility)
 
 
 marginsInput margins showPreview =

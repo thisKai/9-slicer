@@ -6,7 +6,7 @@ import Preview.Types as Preview
 type Msg
     = NoOp
     | RequestOpenUrl
-    | ImageSlicerMessage Preview.Msg
+    | PreviewMessage Preview.Msg
 
 
 type alias Model =
