@@ -5,6 +5,7 @@ const {dialog} = require('electron').remote
 const Elm = require('./app.js')
 const {openImageUrl} = require('./sys/file-dialogs.js')
 
+const saveSlices = require('./save.js')
 
 // start the elm app in the container
 // and keep a reference for communicating with the app
@@ -28,6 +29,5 @@ slicer.ports.requestOpenUrl.subscribe(() => {
     .catch(err => console.log(err))
 })
 
-slicer.ports.saveSlices.subscribe(cropData => {
-  console.log(cropData)
-})
+
+slicer.ports.saveSlices.subscribe(saveSlices)
