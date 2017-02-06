@@ -14,11 +14,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "electron": "^1.4.5",
+    "electron": "^1.4.15",
     "sharp": "^0.17.1"
   },
   "devDependencies": {
     "chokidar": "^1.6.1",
+    "devtron": "^1.4.0",
     "electron-rebuild": "^1.5.7",
     "elm": "^0.18.0"
   }
