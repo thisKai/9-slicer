@@ -21,7 +21,7 @@ type alias Model =
 
 
 type alias OpenImageData =
-    { sourceUri : Maybe String
+    { sourceUrl : Maybe String
     , size : Size
     }
 
