@@ -48,14 +48,14 @@ type alias CropRect =
 
 
 type alias CropDimensions =
-    { topLeftCorner : CropRect
-    , topEdge : CropRect
-    , topRightCorner : CropRect
-    , rightEdge : CropRect
-    , bottomRightCorner : CropRect
-    , bottomEdge : CropRect
-    , bottomLeftCorner : CropRect
-    , leftEdge : CropRect
+    { topLeft : CropRect
+    , top : CropRect
+    , topRight : CropRect
+    , right : CropRect
+    , bottomRight : CropRect
+    , bottom : CropRect
+    , bottomLeft : CropRect
+    , left : CropRect
     }
 
 

@@ -106,12 +106,12 @@ getCropDimensions size margins =
             , bottom = centerBottom
             }
     in
-        { topLeftCorner = topLeftCorner
-        , topEdge = topEdge
-        , topRightCorner = topRightCorner
-        , rightEdge = rightEdge
-        , bottomRightCorner = bottomRightCorner
-        , bottomEdge = bottomEdge
-        , bottomLeftCorner = bottomLeftCorner
-        , leftEdge = leftEdge
+        { topLeft = topLeftCorner
+        , top = topEdge
+        , topRight = topRightCorner
+        , right = rightEdge
+        , bottomRight = bottomRightCorner
+        , bottom = bottomEdge
+        , bottomLeft = bottomLeftCorner
+        , left = leftEdge
         }
