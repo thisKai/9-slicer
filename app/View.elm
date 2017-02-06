@@ -2,7 +2,7 @@ module View exposing (view)
 
 import Types as Types
 import Components exposing (..)
-import Margins.View exposing (..)
+import Preview.View exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 

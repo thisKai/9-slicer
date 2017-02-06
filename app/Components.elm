@@ -2,7 +2,7 @@ module Components exposing (..)
 
 import Types exposing (..)
 import Helper exposing (..)
-import Margins.Types as Margins
+import Preview.Types as Preview
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
@@ -10,11 +10,11 @@ import String
 
 
 changeMarginSizeMsg dimension text =
-    Types.ImageSlicerMessage (Margins.ChangeSize dimension text)
+    Types.ImageSlicerMessage (Preview.ChangeSize dimension text)
 
 
 changeStretchPreviewMsg stretch =
-    Types.ImageSlicerMessage (Margins.ChangeStretchPreview stretch)
+    Types.ImageSlicerMessage (Preview.ChangeStretchPreview stretch)
 
 
 sizeEditor size stretchPreview =
@@ -36,7 +36,7 @@ sizeEditor size stretchPreview =
 
 toolbar =
     div [ class "toolbar" ]
-        [ button [ onClick (Types.ImageSlicerMessage Margins.RequestOpenUrl) ] [ text "Open" ]
+        [ button [ onClick (Types.ImageSlicerMessage Preview.RequestOpenUrl) ] [ text "Open" ]
         , div [ class "spacer" ] []
         , tabBar
             { tabs =

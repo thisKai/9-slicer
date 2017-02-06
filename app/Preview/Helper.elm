@@ -1,7 +1,7 @@
-module Margins.Helper exposing (..)
+module Preview.Helper exposing (..)
 
 import Helper exposing (..)
-import Margins.Types exposing (..)
+import Preview.Types exposing (..)
 
 
 sourceToCSS src =

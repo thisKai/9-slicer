@@ -1,20 +1,20 @@
 module Types exposing (..)
 
-import Margins.Types as Margins
+import Preview.Types as Preview
 
 
 type Msg
     = NoOp
-    | ImageSlicerMessage Margins.Msg
+    | ImageSlicerMessage Preview.Msg
 
 
 type alias Model =
-    { source : Margins.ImageSource
-    , previewSize : Margins.Size
+    { source : Preview.ImageSource
+    , previewSize : Preview.Size
     , stretchPreview : Bool
-    , margins : Margins.Margins
+    , margins : Preview.Margins
     , showMarginsPreview : Bool
-    , drag : Maybe Margins.DragData
+    , drag : Maybe Preview.DragData
     }
 
 

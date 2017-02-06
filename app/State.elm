@@ -3,15 +3,15 @@ module State exposing (..)
 import Ports exposing (..)
 import Types exposing (..)
 import Helper exposing (..)
-import Margins.Types as Margins
-import Margins.Helper exposing (..)
-import Margins.State
+import Preview.Types as Preview
+import Preview.Helper exposing (..)
+import Preview.State
 import Mouse exposing (Position)
 
 
 init : ( Model, Cmd msg )
 init =
-    ( { source = Margins.Url "example.png"
+    ( { source = Preview.Url "example.png"
       , previewSize =
             { width = 360
             , height = 360
@@ -32,7 +32,7 @@ init =
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    Margins.State.subscriptions model
+    Preview.State.subscriptions model
 
 
 
@@ -46,4 +46,4 @@ update msg model =
             ( model, Cmd.none )
 
         ImageSlicerMessage imageSlicerMsg ->
-            Margins.State.update imageSlicerMsg model
+            Preview.State.update imageSlicerMsg model

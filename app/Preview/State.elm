@@ -1,9 +1,9 @@
-module Margins.State exposing (..)
+module Preview.State exposing (..)
 
 import Types as Types
 import Ports exposing (..)
-import Margins.Types exposing (..)
-import Margins.Helper exposing (..)
+import Preview.Types exposing (..)
+import Preview.Helper exposing (..)
 import Mouse exposing (Position)
 
 
