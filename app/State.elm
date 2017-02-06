@@ -32,7 +32,10 @@ init =
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    Preview.State.subscriptions model
+    Sub.batch
+        [ receiveUrl Types.ChangeImageSource
+        , Preview.State.subscriptions model
+        ]
 
 
 

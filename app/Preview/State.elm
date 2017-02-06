@@ -12,7 +12,7 @@ subscriptions : Types.Model -> Sub Types.Msg
 subscriptions model =
     case model.drag of
         Nothing ->
-            receiveUrl Types.ChangeImageSource
+            Sub.none
 
         Just drag ->
             Sub.batch
