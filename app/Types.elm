@@ -16,3 +16,23 @@ type alias Model =
     , showMarginsPreview : Bool
     , drag : Maybe Margins.DragData
     }
+
+
+type alias CropRect =
+    { left : Int
+    , top : Int
+    , right : Int
+    , bottom : Int
+    }
+
+
+type alias CropDimensions =
+    { topLeftCorner : CropRect
+    , topEdge : CropRect
+    , topRightCorner : CropRect
+    , rightEdge : CropRect
+    , bottomRightCorner : CropRect
+    , bottomEdge : CropRect
+    , bottomLeftCorner : CropRect
+    , leftEdge : CropRect
+    }
