@@ -49,6 +49,7 @@ type Side
     | Bottom
     | Left
 
+
 type ResizeEdge
     = NoEdge
     | TopLeftCorner
@@ -59,6 +60,27 @@ type ResizeEdge
     | BottomEdge
     | BottomLeftCorner
     | LeftEdge
+
+
+type alias CropRect =
+    { left : Int
+    , top : Int
+    , right : Int
+    , bottom : Int
+    }
+
+
+type alias CropDimensions =
+    { topLeftCorner : CropRect
+    , topEdge : CropRect
+    , topRightCorner : CropRect
+    , rightEdge : CropRect
+    , bottomRightCorner : CropRect
+    , bottomEdge : CropRect
+    , bottomLeftCorner : CropRect
+    , leftEdge : CropRect
+    }
+
 
 type alias DragData =
     { side : Side
