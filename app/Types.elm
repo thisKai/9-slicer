@@ -44,6 +44,8 @@ type alias CropRect =
     , top : Int
     , right : Int
     , bottom : Int
+    , width : Int
+    , height : Int
     }
 
 

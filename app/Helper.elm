@@ -50,11 +50,19 @@ getCropDimensions size margins =
         centerBottom =
             size.height - margins.bottom
 
+        centerWidth =
+            size.width - margins.left - margins.right
+
+        centerHeight =
+            size.height - margins.top - margins.bottom
+
         topLeftCorner =
             { left = 0
             , top = 0
             , right = margins.left
             , bottom = margins.top
+            , width = margins.left
+            , height = margins.top
             }
 
         topEdge =
@@ -62,6 +70,8 @@ getCropDimensions size margins =
             , top = 0
             , right = centerRight
             , bottom = margins.top
+            , width = centerWidth
+            , height = margins.top
             }
 
         topRightCorner =
@@ -69,6 +79,8 @@ getCropDimensions size margins =
             , top = 0
             , right = size.width
             , bottom = margins.top
+            , width = margins.right
+            , height = margins.top
             }
 
         rightEdge =
@@ -76,6 +88,8 @@ getCropDimensions size margins =
             , top = margins.top
             , right = size.width
             , bottom = centerBottom
+            , width = margins.right
+            , height = centerHeight
             }
 
         bottomRightCorner =
@@ -83,6 +97,8 @@ getCropDimensions size margins =
             , top = centerBottom
             , right = size.width
             , bottom = size.height
+            , width = margins.right
+            , height = margins.bottom
             }
 
         bottomEdge =
@@ -90,6 +106,8 @@ getCropDimensions size margins =
             , top = centerBottom
             , right = centerRight
             , bottom = size.height
+            , width = centerWidth
+            , height = margins.bottom
             }
 
         bottomLeftCorner =
@@ -97,6 +115,8 @@ getCropDimensions size margins =
             , top = centerBottom
             , right = margins.left
             , bottom = size.height
+            , width = margins.left
+            , height = margins.bottom
             }
 
         leftEdge =
@@ -104,6 +124,8 @@ getCropDimensions size margins =
             , top = margins.top
             , right = margins.left
             , bottom = centerBottom
+            , width = margins.left
+            , height = centerHeight
             }
     in
         { topLeft = topLeftCorner
