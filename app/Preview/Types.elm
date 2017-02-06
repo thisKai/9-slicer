@@ -16,17 +16,6 @@ type Msg
     | PreviewResizeEnd ResizeEdge Position
 
 
-type ImageSource
-    = Nowhere
-    | Url String
-
-
-type alias Size =
-    { width : Int
-    , height : Int
-    }
-
-
 type Dimension
     = Width
     | Height

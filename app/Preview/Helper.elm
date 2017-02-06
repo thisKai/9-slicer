@@ -1,29 +1,8 @@
 module Preview.Helper exposing (..)
 
+import Types as Types
 import Helper exposing (..)
 import Preview.Types exposing (..)
-
-
-sourceToCSS src =
-    case src of
-        Nowhere ->
-            ""
-
-        Url url ->
-            "url(" ++ (fixWindowsUrl url) ++ ")"
-
-
-setSize : Size -> String -> Int -> Size
-setSize size name val =
-    case name of
-        "width" ->
-            { size | width = val }
-
-        "height" ->
-            { size | height = val }
-
-        _ ->
-            size
 
 
 getMargin : Margins -> Side -> Int
@@ -119,7 +98,7 @@ oppositeSide side =
             Right
 
 
-dragMargin : Size -> Margins -> Side -> Int -> Int -> Int -> Int
+dragMargin : Types.Size -> Margins -> Side -> Int -> Int -> Int -> Int
 dragMargin size margins side startMargin startPosition currentPosition =
     let
         posDiff =

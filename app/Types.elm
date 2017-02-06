@@ -11,12 +11,23 @@ type Msg
 
 
 type alias Model =
-    { source : Preview.ImageSource
-    , previewSize : Preview.Size
+    { source : ImageSource
+    , previewSize : Size
     , stretchPreview : Bool
     , margins : Preview.Margins
     , showMarginsPreview : Bool
     , drag : Maybe Preview.DragData
+    }
+
+
+type ImageSource
+    = Nowhere
+    | Url String
+
+
+type alias Size =
+    { width : Int
+    , height : Int
     }
 
 

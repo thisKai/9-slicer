@@ -11,7 +11,7 @@ import Mouse exposing (Position)
 
 init : ( Model, Cmd msg )
 init =
-    ( { source = Preview.Url "example.png"
+    ( { source = Url "example.png"
       , previewSize =
             { width = 360
             , height = 360
@@ -49,7 +49,7 @@ update msg model =
             ( model, requestOpenUrl () )
 
         ChangeImageSource url ->
-            ( { model | source = Preview.Url url }, Cmd.none )
+            ( { model | source = Url url }, Cmd.none )
 
         PreviewMessage imageSlicerMsg ->
             Preview.State.update imageSlicerMsg model

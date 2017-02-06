@@ -1,6 +1,7 @@
 module Preview.State exposing (..)
 
 import Types as Types
+import Helper exposing (..)
 import Ports exposing (..)
 import Preview.Types exposing (..)
 import Preview.Helper exposing (..)
