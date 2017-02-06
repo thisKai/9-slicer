@@ -5,6 +5,7 @@ import Preview.Types as Preview
 
 type Msg
     = NoOp
+    | RequestOpenUrl
     | ImageSlicerMessage Preview.Msg
 
 

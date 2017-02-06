@@ -36,7 +36,7 @@ sizeEditor size stretchPreview =
 
 toolbar =
     div [ class "toolbar" ]
-        [ button [ onClick (Types.ImageSlicerMessage Preview.RequestOpenUrl) ] [ text "Open" ]
+        [ button [ onClick RequestOpenUrl ] [ text "Open" ]
         , div [ class "spacer" ] []
         , tabBar
             { tabs =

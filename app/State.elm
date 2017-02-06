@@ -45,5 +45,8 @@ update msg model =
         NoOp ->
             ( model, Cmd.none )
 
+        RequestOpenUrl ->
+            ( model, requestOpenUrl () )
+
         ImageSlicerMessage imageSlicerMsg ->
             Preview.State.update imageSlicerMsg model

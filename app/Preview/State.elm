@@ -23,9 +23,6 @@ subscriptions model =
 update : Msg -> Types.Model -> ( Types.Model, Cmd Types.Msg )
 update msg model =
     case msg of
-        RequestOpenUrl ->
-            ( model, requestOpenUrl () )
-
         ChangeImageSource url ->
             ( { model | source = Url url }, Cmd.none )
 

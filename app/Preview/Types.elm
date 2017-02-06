@@ -4,8 +4,7 @@ import Mouse exposing (Position)
 
 
 type Msg
-    = RequestOpenUrl
-    | ChangeImageSource String
+    = ChangeImageSource String
     | ChangeSize String String
     | ChangeStretchPreview Bool
     | ChangeMargins Side String
