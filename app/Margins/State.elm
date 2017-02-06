@@ -6,11 +6,12 @@ import Margins.Types exposing (..)
 import Margins.Helper exposing (..)
 import Mouse exposing (Position)
 
+
 subscriptions : Types.Model -> Sub Types.Msg
 subscriptions model =
     case model.drag of
         Nothing ->
-            receiveUrl (\url -> (Types.ImageSlicerMessage (ChangeSource url)))
+            receiveUrl (\url -> (Types.ImageSlicerMessage (ChangeImageSource url)))
 
         Just drag ->
             Sub.batch
@@ -24,7 +25,7 @@ update msg model =
         RequestOpenUrl ->
             ( model, requestOpenUrl () )
 
-        ChangeSource url ->
+        ChangeImageSource url ->
             ( { model | source = Url url }, Cmd.none )
 
         ChangeSize prop val ->

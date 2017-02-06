@@ -5,7 +5,7 @@ import Mouse exposing (Position)
 
 type Msg
     = RequestOpenUrl
-    | ChangeSource String
+    | ChangeImageSource String
     | ChangeSize String String
     | ChangeStretchPreview Bool
     | ChangeMargins Side String
@@ -18,7 +18,7 @@ type Msg
     | PreviewResizeEnd ResizeEdge Position
 
 
-type Source
+type ImageSource
     = Nowhere
     | Url String
 

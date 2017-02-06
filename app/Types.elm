@@ -9,7 +9,7 @@ type Msg
 
 
 type alias Model =
-    { source : Margins.Source
+    { source : Margins.ImageSource
     , previewSize : Margins.Size
     , stretchPreview : Bool
     , margins : Margins.Margins
