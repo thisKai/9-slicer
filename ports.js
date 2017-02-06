@@ -19,3 +19,7 @@ slicer.ports.requestOpenUrl.subscribe(() => {
     })
     .catch(err => console.log(err))
 })
+
+slicer.ports.saveSlices.subscribe(cropData => {
+  console.log(cropData)
+})

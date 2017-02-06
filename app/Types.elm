@@ -36,3 +36,9 @@ type alias CropDimensions =
     , bottomLeftCorner : CropRect
     , leftEdge : CropRect
     }
+
+
+type alias CropImageData =
+    { imageUri : String
+    , dimensions : CropDimensions
+    }
