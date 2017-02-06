@@ -48,5 +48,8 @@ update msg model =
         RequestOpenUrl ->
             ( model, requestOpenUrl () )
 
+        ChangeImageSource url ->
+            ( { model | source = Preview.Url url }, Cmd.none )
+
         PreviewMessage imageSlicerMsg ->
             Preview.State.update imageSlicerMsg model

@@ -4,8 +4,7 @@ import Mouse exposing (Position)
 
 
 type Msg
-    = ChangeImageSource String
-    | ChangeSize String String
+    = ChangeSize String String
     | ChangeStretchPreview Bool
     | ChangeMargins Side String
     | ChangeMarginPreviewVisibility Bool

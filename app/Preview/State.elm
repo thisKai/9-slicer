@@ -11,7 +11,7 @@ subscriptions : Types.Model -> Sub Types.Msg
 subscriptions model =
     case model.drag of
         Nothing ->
-            receiveUrl (\url -> (Types.PreviewMessage (ChangeImageSource url)))
+            receiveUrl Types.ChangeImageSource
 
         Just drag ->
             Sub.batch
@@ -23,9 +23,6 @@ subscriptions model =
 update : Msg -> Types.Model -> ( Types.Model, Cmd Types.Msg )
 update msg model =
     case msg of
-        ChangeImageSource url ->
-            ( { model | source = Url url }, Cmd.none )
-
         ChangeSize prop val ->
             let
                 intValue =
