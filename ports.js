@@ -14,8 +14,17 @@ slicer.ports.requestOpenUrl.subscribe(() => {
   openImageUrl(dialog)
     .then(filePath => {
       const image = new Image()
+      image.onload = e => {
+        console.log(image.naturalWidth, image.naturalHeight)
+        slicer.ports.openImage.send({
+          sourceUrl: filePath,
+          size: {
+            width: image.naturalWidth,
+            height: image.naturalHeight,
+          },
+        })
+      }
       image.src = filePath
-      slicer.ports.receiveUrl.send(filePath)
     })
     .catch(err => console.log(err))
 })
