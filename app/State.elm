@@ -56,6 +56,19 @@ update msg model =
         RequestOpenUrl ->
             ( model, requestOpenUrl () )
 
+        RequestSaveSlices ->
+            case model.source of
+                Nowhere ->
+                    ( model, Cmd.none )
+
+                Url src ->
+                    ( model
+                    , saveSlices
+                        { imageUrl = src
+                        , dimensions = (getCropDimensions model.size model.margins)
+                        }
+                    )
+
         ChangeImageSource url ->
             ( { model | source = Url url }, Cmd.none )
 

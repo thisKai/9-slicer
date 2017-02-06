@@ -46,7 +46,7 @@ toolbar =
             , selectedIndex = 1
             }
         , div [ class "spacer" ] []
-        , button [] [ text "Save" ]
+        , button [ onClick RequestSaveSlices ] [ text "Save" ]
         ]
 
 

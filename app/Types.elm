@@ -6,6 +6,7 @@ import Preview.Types as Preview
 type Msg
     = NoOp
     | RequestOpenUrl
+    | RequestSaveSlices
     | ChangeImageSource String
     | OpenImage OpenImageData
     | PreviewMessage Preview.Msg
