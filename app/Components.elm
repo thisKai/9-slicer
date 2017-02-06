@@ -8,11 +8,14 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import String
 
+
 changeMarginSizeMsg dimension text =
-  Types.ImageSlicerMessage (Margins.ChangeSize dimension text)
+    Types.ImageSlicerMessage (Margins.ChangeSize dimension text)
+
 
 changeStretchPreviewMsg stretch =
-  Types.ImageSlicerMessage (Margins.ChangeStretchPreview stretch)
+    Types.ImageSlicerMessage (Margins.ChangeStretchPreview stretch)
+
 
 sizeEditor size stretchPreview =
     div []

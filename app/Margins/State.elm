@@ -19,7 +19,8 @@ subscriptions model =
                 , Mouse.ups (\pos -> (Types.ImageSlicerMessage (MarginDragEnd drag.side pos)))
                 ]
 
-update : Msg -> Types.Model -> (Types.Model, Cmd Types.Msg)
+
+update : Msg -> Types.Model -> ( Types.Model, Cmd Types.Msg )
 update msg model =
     case msg of
         RequestOpenUrl ->

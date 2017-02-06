@@ -10,9 +10,11 @@ import Html.Events exposing (..)
 import Mouse exposing (Position)
 import Json.Decode as Decode
 
+
 mouseMsg : (Position -> Msg) -> Position -> Types.Msg
 mouseMsg msg pos =
-  Types.ImageSlicerMessage (msg pos)
+    Types.ImageSlicerMessage (msg pos)
+
 
 onMarginDragStart side =
     on "mousedown" (Decode.map (mouseMsg (MarginDragStart side)) Mouse.position)
@@ -76,7 +78,8 @@ marginsPreview margins =
 
 
 changeMarginsMsg side text =
-  Types.ImageSlicerMessage (ChangeMargins side text)
+    Types.ImageSlicerMessage (ChangeMargins side text)
+
 
 marginInput margin val =
     div [ class "margin-input" ]
@@ -91,7 +94,8 @@ marginInput margin val =
 
 
 changeMarginPreviewVisibilityMsg visibility =
-  Types.ImageSlicerMessage (ChangeMarginPreviewVisibility visibility)
+    Types.ImageSlicerMessage (ChangeMarginPreviewVisibility visibility)
+
 
 marginsInput margins showPreview =
     div []

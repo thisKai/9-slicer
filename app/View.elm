@@ -6,6 +6,7 @@ import Margins.View exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
+
 view : Types.Model -> Html Types.Msg
 view model =
     div [ class "workspace" ]
