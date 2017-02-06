@@ -12,6 +12,10 @@ import Mouse exposing (Position)
 init : ( Model, Cmd msg )
 init =
     ( { source = Url "example.png"
+      , size =
+            { width = 216
+            , height = 216
+            }
       , previewSize =
             { width = 360
             , height = 360

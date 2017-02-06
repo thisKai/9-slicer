@@ -12,6 +12,7 @@ type Msg
 
 type alias Model =
     { source : ImageSource
+    , size : Size
     , previewSize : Size
     , stretchPreview : Bool
     , margins : Preview.Margins
