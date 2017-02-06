@@ -60,6 +60,6 @@ type alias CropDimensions =
 
 
 type alias CropImageData =
-    { imageUri : String
+    { imageUrl : String
     , dimensions : CropDimensions
     }
