@@ -10,7 +10,7 @@ const {openImageUrl} = require('./sys/file-dialogs.js')
 // and keep a reference for communicating with the app
 const slicer = Elm.Main.fullscreen()
 
-slicer.ports.requestOpenUrl.subscribe(event => {
+slicer.ports.requestOpenUrl.subscribe(() => {
   openImageUrl(dialog)
     .then(filePath => {
       const image = new Image()
