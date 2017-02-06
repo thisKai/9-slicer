@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build-native-modules": "electron-rebuild",
     "build-elm": "elm make ./app/Main.elm --output ./app.js",
     "build-elm-docker": "docker-compose run elm",
     "start": "electron .",
@@ -13,10 +14,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "electron": "^1.4.5"
+    "electron": "^1.4.5",
+    "lwip": "0.0.9"
   },
   "devDependencies": {
     "chokidar": "^1.6.1",
+    "electron-rebuild": "^1.5.7",
     "elm": "^0.18.0"
   }
 }
