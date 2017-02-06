@@ -94,3 +94,6 @@ update msg model =
               }
             , Cmd.none
             )
+
+        _ ->
+            ( model, Cmd.none )
