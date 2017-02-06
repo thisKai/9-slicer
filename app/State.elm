@@ -37,8 +37,7 @@ init =
 subscriptions : Model -> Sub Msg
 subscriptions model =
     Sub.batch
-        [ receiveUrl Types.ChangeImageSource
-        , openImage Types.OpenImage
+        [ openImage Types.OpenImage
         , Preview.State.subscriptions model
         ]
 
@@ -68,9 +67,6 @@ update msg model =
                         , dimensions = (getCropDimensions model.size model.margins)
                         }
                     )
-
-        ChangeImageSource url ->
-            ( { model | source = Url url }, Cmd.none )
 
         OpenImage imageData ->
             ( { model
