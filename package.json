@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "electron": "^1.4.5",
-    "lwip": "0.0.9"
+    "sharp": "^0.17.1"
   },
   "devDependencies": {
     "chokidar": "^1.6.1",
