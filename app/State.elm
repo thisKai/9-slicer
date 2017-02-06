@@ -38,6 +38,7 @@ subscriptions : Model -> Sub Msg
 subscriptions model =
     Sub.batch
         [ receiveUrl Types.ChangeImageSource
+        , openImage Types.OpenImage
         , Preview.State.subscriptions model
         ]
 
@@ -57,6 +58,20 @@ update msg model =
 
         ChangeImageSource url ->
             ( { model | source = Url url }, Cmd.none )
+
+        OpenImage imageData ->
+            ( { model
+                | source =
+                    case imageData.sourceUrl of
+                        Nothing ->
+                            Nowhere
+
+                        Just url ->
+                            Url url
+                , size = imageData.size
+              }
+            , Cmd.none
+            )
 
         PreviewMessage imageSlicerMsg ->
             Preview.State.update imageSlicerMsg model

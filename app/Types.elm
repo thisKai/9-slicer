@@ -7,6 +7,7 @@ type Msg
     = NoOp
     | RequestOpenUrl
     | ChangeImageSource String
+    | OpenImage OpenImageData
     | PreviewMessage Preview.Msg
 
 
