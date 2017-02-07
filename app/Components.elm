@@ -35,21 +35,32 @@ sizeEditor size stretchPreview =
         ]
 
 
-toolbar : Html Msg
-toolbar =
-    div [ class "toolbar" ]
-        [ button [ onClick RequestOpenUrl ] [ text "Open" ]
-        , div [ class "spacer" ] []
-        , tabBar
-            { tabs =
-                [ { id = 0, title = "Margins" }
-                , { id = 1, title = "Slices" }
-                ]
-            , selectedIndex = 1
-            }
-        , div [ class "spacer" ] []
-        , button [ onClick RequestSaveSlices ] [ text "Save" ]
-        ]
+toolbar : Model -> Html Msg
+toolbar model =
+    let
+        disableSaveButton =
+            case model.sourceImage of
+                Nothing ->
+                    True
+
+                Just src ->
+                    False
+    in
+        div [ class "toolbar" ]
+            [ button [ onClick RequestOpenUrl ] [ text "Open" ]
+            , div [ class "spacer" ] []
+            , tabBar
+                { tabs =
+                    [ { id = 0, title = "Margins" }
+                    , { id = 1, title = "Slices" }
+                    ]
+                , selectedIndex = 1
+                }
+            , div [ class "spacer" ] []
+            , button
+                [ onClick RequestSaveSlices, disabled disableSaveButton ]
+                [ text "Save" ]
+            ]
 
 
 type alias TabOptions a =

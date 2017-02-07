@@ -10,7 +10,7 @@ import Html.Attributes exposing (..)
 view : Types.Model -> Html Types.Msg
 view model =
     div [ class "workspace" ]
-        [ toolbar
+        [ toolbar model
         , div [ class "split-view" ]
             [ div [ class "sidebar" ]
                 [ sizeEditor model.previewSize model.stretchPreview
