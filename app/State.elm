@@ -3,10 +3,7 @@ module State exposing (..)
 import Ports exposing (..)
 import Types exposing (..)
 import Helper exposing (..)
-import Preview.Types as Preview
-import Preview.Helper exposing (..)
 import Preview.State
-import Mouse exposing (Position)
 
 
 init : ( Model, Cmd msg )

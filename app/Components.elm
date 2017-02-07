@@ -1,12 +1,10 @@
 module Components exposing (..)
 
 import Types exposing (..)
-import Helper exposing (..)
 import Preview.Types as Preview
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
-import String
 
 
 changeMarginSizeMsg dimension text =

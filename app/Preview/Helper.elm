@@ -1,7 +1,6 @@
 module Preview.Helper exposing (..)
 
 import Types as Types
-import Helper exposing (..)
 import Preview.Types exposing (..)
 
 

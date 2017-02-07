@@ -3,7 +3,6 @@ module Preview.View exposing (..)
 import Types as Types
 import Helper exposing (..)
 import Preview.Types exposing (..)
-import Preview.Helper exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
