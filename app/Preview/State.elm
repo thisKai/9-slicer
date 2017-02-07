@@ -16,8 +16,8 @@ subscriptions model =
 
         Just drag ->
             Sub.batch
-                [ Mouse.moves (\pos -> (Types.PreviewMessage (MarginDragMove drag.side pos)))
-                , Mouse.ups (\pos -> (Types.PreviewMessage (MarginDragEnd drag.side pos)))
+                [ Mouse.moves (\pos -> (Types.PreviewMessage (MarginDragMove drag.data.side pos)))
+                , Mouse.ups (\pos -> (Types.PreviewMessage (MarginDragEnd drag.data.side pos)))
                 ]
 
 
@@ -58,10 +58,12 @@ update msg model =
             ( { model
                 | drag =
                     Just
-                        { side = side
-                        , start = position
+                        { start = position
                         , current = position
-                        , startMargins = model.margins
+                        , data =
+                            { side = side
+                            , startMargin = model.margins
+                            }
                         }
               }
             , Cmd.none
@@ -74,12 +76,16 @@ update msg model =
                         Nothing ->
                             model.drag
 
-                        Just ddata ->
-                            Just
-                                { ddata
-                                    | side = side
-                                    , current = position
-                                }
+                        Just dragData ->
+                            let
+                                marginData =
+                                    dragData.data
+                            in
+                                Just
+                                    { dragData
+                                        | current = position
+                                        , data = { marginData | side = side }
+                                    }
                 , margins = dragMargins model
               }
             , Cmd.none

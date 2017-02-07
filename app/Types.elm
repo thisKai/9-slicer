@@ -1,6 +1,7 @@
 module Types exposing (..)
 
 import Preview.Types as Preview
+import Mouse exposing (Position)
 
 
 type Msg
@@ -17,7 +18,7 @@ type alias Model =
     , stretchPreview : Bool
     , margins : Preview.Margins
     , showMarginsOverlay : Bool
-    , drag : Maybe Preview.DragData
+    , drag : Maybe (DragData Preview.MarginDragData)
     }
 
 
@@ -35,6 +36,13 @@ type ImageSource
 type alias Size =
     { width : Int
     , height : Int
+    }
+
+
+type alias DragData a =
+    { start : Position
+    , current : Position
+    , data : a
     }
 
 

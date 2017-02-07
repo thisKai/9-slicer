@@ -49,9 +49,7 @@ type ResizeEdge
     | LeftEdge
 
 
-type alias DragData =
+type alias MarginDragData =
     { side : Side
-    , start : Position
-    , current : Position
-    , startMargins : Margins
+    , startMargin : Margins
     }

@@ -127,23 +127,23 @@ dragMargins model =
             Nothing ->
                 currentMargins
 
-            Just { side, start, current, startMargins } ->
+            Just { start, current, data } ->
                 let
                     getDragMargin =
-                        dragMargin model.previewSize model.margins side
+                        dragMargin model.previewSize model.margins data.side
                 in
-                    case side of
+                    case data.side of
                         None ->
                             currentMargins
 
                         Top ->
-                            { currentMargins | top = getDragMargin startMargins.top start.y current.y }
+                            { currentMargins | top = getDragMargin data.startMargin.top start.y current.y }
 
                         Right ->
-                            { currentMargins | right = getDragMargin startMargins.right start.x current.x }
+                            { currentMargins | right = getDragMargin data.startMargin.right start.x current.x }
 
                         Bottom ->
-                            { currentMargins | bottom = getDragMargin startMargins.bottom start.y current.y }
+                            { currentMargins | bottom = getDragMargin data.startMargin.bottom start.y current.y }
 
                         Left ->
-                            { currentMargins | left = getDragMargin startMargins.left start.x current.x }
+                            { currentMargins | left = getDragMargin data.startMargin.left start.x current.x }
