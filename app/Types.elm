@@ -7,13 +7,12 @@ type Msg
     = NoOp
     | RequestOpenUrl
     | RequestSaveSlices
-    | OpenImage OpenImageData
+    | OpenImage SourceImageData
     | PreviewMessage Preview.Msg
 
 
 type alias Model =
-    { source : ImageSource
-    , size : Size
+    { sourceImage : Maybe SourceImageData
     , previewSize : Size
     , stretchPreview : Bool
     , margins : Preview.Margins
@@ -22,8 +21,8 @@ type alias Model =
     }
 
 
-type alias OpenImageData =
-    { sourceUrl : Maybe String
+type alias SourceImageData =
+    { url : String
     , size : Size
     }
 

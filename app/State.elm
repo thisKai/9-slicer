@@ -11,11 +11,7 @@ import Mouse exposing (Position)
 
 init : ( Model, Cmd msg )
 init =
-    ( { source = Url "example.png"
-      , size =
-            { width = 216
-            , height = 216
-            }
+    ( { sourceImage = Nothing
       , previewSize =
             { width = 360
             , height = 360
@@ -56,31 +52,20 @@ update msg model =
             ( model, requestOpenUrl () )
 
         RequestSaveSlices ->
-            case model.source of
-                Nowhere ->
+            case model.sourceImage of
+                Nothing ->
                     ( model, Cmd.none )
 
-                Url src ->
+                Just imageData ->
                     ( model
                     , saveSlices
-                        { imageUrl = src
-                        , dimensions = (getCropDimensions model.size model.margins)
+                        { imageUrl = imageData.url
+                        , dimensions = (getCropDimensions imageData.size model.margins)
                         }
                     )
 
         OpenImage imageData ->
-            ( { model
-                | source =
-                    case imageData.sourceUrl of
-                        Nothing ->
-                            Nowhere
-
-                        Just url ->
-                            Url url
-                , size = imageData.size
-              }
-            , Cmd.none
-            )
+            ( { model | sourceImage = Just imageData }, Cmd.none )
 
         PreviewMessage imageSlicerMsg ->
             Preview.State.update imageSlicerMsg model

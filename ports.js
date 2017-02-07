@@ -17,7 +17,7 @@ slicer.ports.requestOpenUrl.subscribe(() => {
       const image = new Image()
       image.onload = e => {
         slicer.ports.openImage.send({
-          sourceUrl: filePath,
+          url: `${filePath}?bust=${new Date().getTime()}`,
           size: {
             width: image.naturalWidth,
             height: image.naturalHeight,

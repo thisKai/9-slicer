@@ -113,7 +113,7 @@ marginsInput margins showPreview =
         ]
 
 
-imageSlice9 source size margins =
+imageSlice9 sourceData size margins =
     let
         cssMargins =
             [ margins.top
@@ -134,7 +134,14 @@ imageSlice9 source size margins =
                 , ( "border-width", cssMargins )
                   --, ( "border-image-width", cssMargins )
                 , ( "border-image-slice", cssMargins )
-                , ( "border-image-source", sourceToCSS source )
+                , ( "border-image-source"
+                  , case sourceData of
+                        Nothing ->
+                            ""
+
+                        Just data ->
+                            "url(" ++ data.url ++ ")"
+                  )
                 ]
             ]
             []
@@ -156,7 +163,7 @@ imageMarginsEditor model =
             margins
     in
         div [ class "checkerboard" ]
-            [ imageSlice9 model.source
+            [ imageSlice9 model.sourceImage
                 { width = previewDisplaySize previewSize.width model.stretchPreview
                 , height = previewDisplaySize previewSize.height model.stretchPreview
                 }
