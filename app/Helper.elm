@@ -19,15 +19,6 @@ fixWindowsUrl =
     Regex.replace All (regex "\\\\") (\_ -> "/")
 
 
-sourceToCSS src =
-    case src of
-        Nowhere ->
-            ""
-
-        Url url ->
-            "url(" ++ (fixWindowsUrl url) ++ ")"
-
-
 setSize : Size -> String -> Int -> Size
 setSize size name val =
     case name of
