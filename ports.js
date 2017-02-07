@@ -2,10 +2,10 @@
 
 const {dialog} = require('electron').remote
 
-const Elm = require('./app.js')
-const {openImageUrl} = require('./sys/file-dialogs.js')
+const Elm = require('./app')
+const {openImageUrl} = require('./sys/file-dialogs')
 
-const saveSlices = require('./save-slices.js')
+const saveSlices = require('./save-slices')
 
 // start the elm app in the container
 // and keep a reference for communicating with the app
