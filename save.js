@@ -14,6 +14,12 @@ function getSliceFilePath(imageUrl, sliceName){
    console.log(slicePath)
    return slicePath
 }
+
+function saveImageCallback(err){
+  if(err){
+    console.error('Computer says no', err)
+  }
+}
 function saveSlices(cropData){
   const {
     imageUrl,
