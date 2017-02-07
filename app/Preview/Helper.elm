@@ -42,6 +42,7 @@ setMargin margins name val =
             margins
 
 
+sideToString : Side -> String
 sideToString side =
     case side of
         None ->
@@ -60,6 +61,7 @@ sideToString side =
             "left"
 
 
+sideFromString : String -> Side
 sideFromString sideString =
     case sideString of
         "top" ->
@@ -114,6 +116,7 @@ dragMargin size margins side startMargin startPosition currentPosition =
             |> min (size.width - (side |> oppositeSide |> getMargin margins))
 
 
+dragMargins : Types.Model -> Margins
 dragMargins model =
     let
         currentMargins =

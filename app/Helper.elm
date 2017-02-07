@@ -7,14 +7,17 @@ import String
 import Regex exposing (..)
 
 
+utf : Char.KeyCode -> String
 utf code =
     code |> Char.fromCode |> String.fromChar
 
 
+px : a -> String
 px val =
     (toString val) ++ "px"
 
 
+fixWindowsUrl : String -> String
 fixWindowsUrl =
     Regex.replace All (regex "\\\\") (\_ -> "/")
 

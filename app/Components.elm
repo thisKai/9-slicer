@@ -7,14 +7,17 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 
 
+changeMarginSizeMsg : String -> String -> Msg
 changeMarginSizeMsg dimension text =
     Types.PreviewMessage (Preview.ChangeSize dimension text)
 
 
+changeStretchPreviewMsg : Bool -> Msg
 changeStretchPreviewMsg stretch =
     Types.PreviewMessage (Preview.ChangeStretchPreview stretch)
 
 
+sizeEditor : Size -> Bool -> Html Msg
 sizeEditor size stretchPreview =
     div []
         [ h1 [] [ text "Preview Size" ]
@@ -32,6 +35,7 @@ sizeEditor size stretchPreview =
         ]
 
 
+toolbar : Html Msg
 toolbar =
     div [ class "toolbar" ]
         [ button [ onClick RequestOpenUrl ] [ text "Open" ]
@@ -60,6 +64,7 @@ type alias TabBarOptions a =
     }
 
 
+tabBar : TabBarOptions a -> Html Msg
 tabBar options =
     div [ class "tab-bar" ]
         (List.map

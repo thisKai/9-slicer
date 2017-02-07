@@ -15,14 +15,17 @@ mouseMsg msg pos =
     Types.PreviewMessage (msg pos)
 
 
+onMarginDragStart : Side -> Attribute Types.Msg
 onMarginDragStart side =
     on "mousedown" (Decode.map (mouseMsg (MarginDragStart side)) Mouse.position)
 
 
+marginLabel : a -> Html msg
 marginLabel margin =
     div [ class "margin-label" ] [ text (toString margin) ]
 
 
+marginsPreview : Margins -> Html Types.Msg
 marginsPreview margins =
     div [ class "margins-preview" ]
         [ div [ class "margin highlight margin-top", style [ ( "height", px margins.top ) ] ] []
@@ -76,10 +79,12 @@ marginsPreview margins =
         ]
 
 
+changeMarginsMsg : Side -> String -> Types.Msg
 changeMarginsMsg side text =
     Types.PreviewMessage (ChangeMargins side text)
 
 
+marginInput : Side -> a -> Html Types.Msg
 marginInput margin val =
     div [ class "margin-input" ]
         [ label [] [ text (toString margin) ]
@@ -92,10 +97,12 @@ marginInput margin val =
         ]
 
 
+changeMarginPreviewVisibilityMsg : Bool -> Types.Msg
 changeMarginPreviewVisibilityMsg visibility =
     Types.PreviewMessage (ChangeMarginPreviewVisibility visibility)
 
 
+marginsInput : Margins -> Bool -> Html Types.Msg
 marginsInput margins showPreview =
     div []
         [ h1 [] [ text "Margins" ]
@@ -112,6 +119,7 @@ marginsInput margins showPreview =
         ]
 
 
+imageSlice9 : Maybe Types.SourceImageData -> { width : String, height : String } -> Margins -> Html Types.Msg
 imageSlice9 sourceData size margins =
     let
         cssMargins =
@@ -146,6 +154,7 @@ imageSlice9 sourceData size margins =
             []
 
 
+previewDisplaySize : a -> Bool -> String
 previewDisplaySize size stretch =
     if stretch then
         "auto"
@@ -153,6 +162,7 @@ previewDisplaySize size stretch =
         px size
 
 
+imageMarginsEditor : Types.Model -> Html Types.Msg
 imageMarginsEditor model =
     let
         { previewSize, margins, showMarginsOverlay } =
