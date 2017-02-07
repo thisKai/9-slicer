@@ -156,7 +156,7 @@ previewDisplaySize size stretch =
 
 imageMarginsEditor model =
     let
-        { previewSize, margins, showMarginsPreview } =
+        { previewSize, margins, showMarginsOverlay } =
             model
 
         { top, left, bottom, right } =
@@ -168,7 +168,7 @@ imageMarginsEditor model =
                 , height = previewDisplaySize previewSize.height model.stretchPreview
                 }
                 margins
-            , if showMarginsPreview then
+            , if showMarginsOverlay then
                 marginsPreview margins
               else
                 text ""

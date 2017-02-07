@@ -23,7 +23,7 @@ init =
             , bottom = 64
             , left = 64
             }
-      , showMarginsPreview = True
+      , showMarginsOverlay = True
       , drag = Nothing
       }
     , Cmd.none

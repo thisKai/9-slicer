@@ -16,7 +16,7 @@ type alias Model =
     , previewSize : Size
     , stretchPreview : Bool
     , margins : Preview.Margins
-    , showMarginsPreview : Bool
+    , showMarginsOverlay : Bool
     , drag : Maybe Preview.DragData
     }
 

@@ -14,7 +14,7 @@ view model =
         , div [ class "split-view" ]
             [ div [ class "sidebar" ]
                 [ sizeEditor model.previewSize model.stretchPreview
-                , marginsInput model.margins model.showMarginsPreview
+                , marginsInput model.margins model.showMarginsOverlay
                 ]
             , div
                 [ class

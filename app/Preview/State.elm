@@ -52,7 +52,7 @@ update msg model =
                 ( { model | margins = setMargin model.margins prop intValue }, Cmd.none )
 
         ChangeMarginPreviewVisibility val ->
-            ( { model | showMarginsPreview = val }, Cmd.none )
+            ( { model | showMarginsOverlay = val }, Cmd.none )
 
         MarginDragStart side position ->
             ( { model
